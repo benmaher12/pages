@@ -1,0 +1,16 @@
+<div id="prerequisites">
+    <h2>Prerequisites</h2>
+    <p>Before you proceed complete the following:</p>
+    <ol>
+        {% assign posts = site.posts | where_exp:"post","post.url != page.url" %}
+        {% assign sorted_posts = (posts | sort: "number") %}
+        {% assign limiter = page.number | minus: 1 %}
+        {% for post in sorted_posts limit: limiter %}
+            {% if post.pre-req != "false" %}
+                <li>
+                    <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+                </li>
+            {% endif %}
+        {% endfor %}
+    </ol>
+</div>

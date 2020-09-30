@@ -1,0 +1,15 @@
+<div id="appendices">
+
+    
+    {% for post in site.categories.appendices %}
+    {% if site.categories.appendices %}
+    <h2>Appendices</h2>
+    <p>Check the following supplementary <strong>Appendices</strong> for more details and context.</p>
+    <ul>
+        <li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>    
+    </ul>
+    {% else %}
+    <div></div>
+    {% endif %}
+    {% endfor %}    
+</div>

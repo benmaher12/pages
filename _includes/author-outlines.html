@@ -1,0 +1,11 @@
+<div id="author_outlines">
+  {% for outline_file in site.author_outlines %}
+  <h3>{{ outline_file.course_name }}</h3>
+
+  <a href="{{ site.baseurl }}{{ outline_file.url }}">
+    {{ outline_file.outline_title }}
+  </a>
+  <!-- uncomment to render outline_file content to current page -->
+  <!-- <p>{{ outline_file.content | markdownify }}</p> -->
+  {% endfor %}
+</div>
